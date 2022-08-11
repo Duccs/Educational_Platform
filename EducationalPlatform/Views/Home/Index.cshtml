@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/fontawesome.min.css">
+
+<div id="page-wrapper" class="container">
+  <div class="row">
+	<div class="col-lg-12">
+		<h1>Dashboard <small>Statistics Overview</small></h1>
+		<ol class="breadcrumb">
+			<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+		</ol>
+	</div>
+</div><!-- /.row -->
+
+<div class="row">
+	<div class="col-lg-3">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<i class="fa fa-users fa-5x"></i>
+					</div>
+					<div class="col-xs-6 text-right">
+						<p class="announcement-heading">@ViewData["StudentCount"]</p>
+						<p class="announcement-text">Students</p>
+					</div>
+				</div>
+			</div>
+			<a asp-area="" asp-controller="Students" asp-action="Index">
+				<div class="panel-footer announcement-bottom">
+					<div class="row">
+						<div class="col-xs-6">
+							View
+						</div>
+						<div class="col-xs-6 text-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<i class="fa fa-briefcase fa-5x"></i>
+					</div>
+					<div class="col-xs-6 text-right">
+						<p class="announcement-heading">@ViewData["TeacherCount"]</p>
+						<p class="announcement-text">Teachers</p>
+					</div>
+				</div>
+			</div>
+			<a asp-area="" asp-controller="Teachers" asp-action="Index">
+				<div class="panel-footer announcement-bottom">
+					<div class="row">
+						<div class="col-xs-6">
+							View
+						</div>
+						<div class="col-xs-6 text-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<i class="fa fa-book fa-5x"></i>
+					</div>
+					<div class="col-xs-6 text-right">
+						<p class="announcement-heading">@ViewData["CourseCount"]</p>
+						<p class="announcement-text">Courses</p>
+					</div>
+				</div>
+			</div>
+			<a asp-area="" asp-controller="Courses" asp-action="Index">
+				<div class="panel-footer announcement-bottom">
+					<div class="row">
+						<div class="col-xs-6">
+							View
+						</div>
+						<div class="col-xs-6 text-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<i class="fa fa-puzzle-piece fa-5x"></i>
+					</div>
+					<div class="col-xs-6 text-right">
+						<p class="announcement-heading">@ViewData["DepartmentCount"]</p>
+						<p class="announcement-text">Departments</p>
+					</div>
+				</div>
+			</div>
+			<a asp-area="" asp-controller="Departments" asp-action="Index">
+				<div class="panel-footer announcement-bottom">
+					<div class="row">
+						<div class="col-xs-6">
+							View
+						</div>
+						<div class="col-xs-6 text-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div><!-- /.row -->
+	</div>
+				                                  

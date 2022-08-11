@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EducationalPlatform.Models.StudentCourse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form class="d-flex" style="max-width:50%">
+        <input class="form-control me-sm-2" name="studentName" type="text" placeholder="Student Name">
+        <input class="form-control me-sm-2" name="courseName" type="text" placeholder="Course Name">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr class="table-active">
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPayment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPayment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "<i class=\"fas fa - edit\">", new { studentId = item.StudentId, courseId = item.CourseId }) |
+                @Html.ActionLink("Details", "<i class=\"fas fa - edit\">", new  { studentId = item.StudentId, courseId = item.CourseId }) |
+                @Html.ActionLink("Delete", "<i class=\"fas fa - edit\">", new { studentId = item.StudentId, courseId = item.CourseId })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<br />
+<br />

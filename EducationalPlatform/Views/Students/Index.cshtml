@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EducationalPlatform.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form class="d-flex" style="max-width:30%">
+        <input class="form-control me-sm-2" name="searchString" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr class="table-active">
+            <th>
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Name), "Index", new { sortOrder = ViewBag.NameSortParm})
+            </th>
+            <th>
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Dob), "Index", new { sortOrder = ViewBag.DateSortParm})
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<br />
